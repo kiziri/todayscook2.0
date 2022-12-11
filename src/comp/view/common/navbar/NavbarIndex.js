@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Tab, Tabs} from "@material-ui/core";
+import {Paper, Tab, Tabs} from "@material-ui/core";
 
 const NavbarIndex = () => {
   const [value, setValue] = useState(0);
@@ -8,19 +8,21 @@ const NavbarIndex = () => {
   };
 
   return(
-    <div>
+    <Paper >
       <Tabs
-        variant="scrollable"
         value={value}
         onChange={handleChange}
-        scrollButtons="on"
+        // scrollButtons="on"
         aria-label="Main Menu"
+        centered
+        indicatorColor="primary"
+        textColor="primary"
       >
         <Tab label="Menu 1" />
         <Tab label="Menu 2" />
         <Tab label="Menu 3" />
       </Tabs>
-    </div>
+    </Paper>
   );
 }
 export default NavbarIndex;
